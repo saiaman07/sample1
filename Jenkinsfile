@@ -9,6 +9,7 @@ pipeline {
       }
       stage('Docker Build') {
          steps {
+             sh "chmod 777 -R /var/lib/jenkins/workspace/azure-voting-app-redis"
             sh(script: 'docker compose build')
          }
       }
